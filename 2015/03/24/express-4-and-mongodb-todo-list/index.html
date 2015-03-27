@@ -3,17 +3,38 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Dcard Developers</title>
+  <title>用Express 4及MongoDB做todo List | Dcard Developers</title>
   <meta name="viewport" content="width=device-width">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dcard Developers">
-<meta property="og:url" content="http://dcard.tw/index.html">
+  <meta name="description" content="本篇文章主要參考自DreamersLab - 用Express和MongoDB寫一個todo list。原文的教學內容是使用Express 3.x版，在這邊做簡單Express 4.12.1的todo list實作。
+功能介紹
+用cookie來判斷使用者
+新增、讀取、更新、刪除待辦事項(C.R.U.D)
+
+安裝開發環境  確定已安裝node.js, Express和MongoDB
+
+安裝Expre">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用Express 4及MongoDB做todo List">
+<meta property="og:url" content="http://dcard.tw/2015/03/24/express-4-and-mongodb-todo-list/index.html">
 <meta property="og:site_name" content="Dcard Developers">
-<meta property="og:description">
+<meta property="og:description" content="本篇文章主要參考自DreamersLab - 用Express和MongoDB寫一個todo list。原文的教學內容是使用Express 3.x版，在這邊做簡單Express 4.12.1的todo list實作。
+功能介紹
+用cookie來判斷使用者
+新增、讀取、更新、刪除待辦事項(C.R.U.D)
+
+安裝開發環境  確定已安裝node.js, Express和MongoDB
+
+安裝Expre">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dcard Developers">
-<meta name="twitter:description">
+<meta name="twitter:title" content="用Express 4及MongoDB做todo List">
+<meta name="twitter:description" content="本篇文章主要參考自DreamersLab - 用Express和MongoDB寫一個todo list。原文的教學內容是使用Express 3.x版，在這邊做簡單Express 4.12.1的todo list實作。
+功能介紹
+用cookie來判斷使用者
+新增、讀取、更新、刪除待辦事項(C.R.U.D)
+
+安裝開發環境  確定已安裝node.js, Express和MongoDB
+
+安裝Expre">
   
     <link rel="alternative" href="/atom.xml" title="Dcard Developers" type="application/atom+xml">
   
@@ -45,9 +66,7 @@
 	</div>
 </header>
     <div id="main">
-      
-  
-    <article id="post-express-4-and-mongodb-todo-list" class="post">
+      <article id="post-express-4-and-mongodb-todo-list" class="post">
 	<footer class="entry-meta-header">
 		<span class="meta-elements date">
 			<a href="/2015/03/24/express-4-and-mongodb-todo-list/" class="article-date">
@@ -63,8 +82,8 @@
 	<header class="entry-header">
 		
   
-    <h1 itemprop="name" class="entry-title">
-      <a class="article-title" href="/2015/03/24/express-4-and-mongodb-todo-list/">用Express 4及MongoDB做todo List</a>
+    <h1 class="article-title entry-title" itemprop="name">
+      用Express 4及MongoDB做todo List
     </h1>
   
 
@@ -537,117 +556,26 @@ exports.current_user = <span class="function"><span class="keyword">function</sp
 		</div>
 	</footer>
 	
-</article>
-
-
-	<hr class="article-devider">
-
-
-
-  
-    <article id="post-如何使用-Google-Chrome-Developer-Tools-解析-Dcard-json-api" class="post">
-	<footer class="entry-meta-header">
-		<span class="meta-elements date">
-			<a href="/2015/03/07/如何使用-Google-Chrome-Developer-Tools-解析-Dcard-json-api/" class="article-date">
-  <time datetime="2015-03-07T02:31:02.000Z" itemprop="datePublished">2015-03-07</time>
-</a>
-		</span>
-		<span class="meta-elements author">Dcard Team</span>
-		<div class="commentscount">
-			
-		</div>
-	</footer>
-	
-	<header class="entry-header">
-		
-  
-    <h1 itemprop="name" class="entry-title">
-      <a class="article-title" href="/2015/03/07/如何使用-Google-Chrome-Developer-Tools-解析-Dcard-json-api/">如何使用 Google Chrome Developer Tools 解析 Dcard json api</a>
-    </h1>
-  
-
-	</header>
-	<div class="entry-content">
-		
-    	<p>本文要介紹如何使用 Google Chrome Developer Tools 觀察 api 呼叫狀況，得到如何呼叫 Dcard 公開的 JSON api.</p>
-<h3 id="如何開啟">如何開啟</h3><p>按下 設定 &gt; 更多工具 &gt; 開發人員工具<br><img src="/img/how-to-use-google-developer-tools-parsing-dcard/sWgkgIL.png" alt="/img/how-to-use-google-developer-tools-parsing-dcard/sWgkgIL.png"></p>
-<p>接這就出現工具列了！第一個畫面看到的是 Elements，會看到大大的 Dcard 顏文字。這頁主要是顯示 HTML 的 DOM 樹<br><img src="/img/how-to-use-google-developer-tools-parsing-dcard/rHkuFyy.png" alt="/img/how-to-use-google-developer-tools-parsing-dcard/rHkuFyy.png"></p>
-<p>今天的主角是 Network，觀察網路 API 傳輸狀況。因為網頁開好才開起來，這裡只會看到 <a href="http://www.ruanyifeng.com/blog/2013/01/javascript_source_map.html" target="_blank" rel="external">.map 檔</a>的 request<br><img src="/img/how-to-use-google-developer-tools-parsing-dcard/uUoe8pu.png" alt="/img/how-to-use-google-developer-tools-parsing-dcard/uUoe8pu.png"></p>
-<p>重新整理頁面之後就可以看到所有 Request，可以看到這個網頁有數百個 request，右邊有選項可以選擇只看特定類型的。分別為：HTML 檔、CSS 樣式、圖片、影音、Script 腳本、XHR (Ajax 請求)、字體、WebSockets、其他<br><img src="/img/how-to-use-google-developer-tools-parsing-dcard/kUpxP10.png" alt="/img/how-to-use-google-developer-tools-parsing-dcard/kUpxP10.png"></p>
-<p>由於 Dcard 是用 Single Page Application 架構，所有 request 都是用 Ajax 方式得到，所以大力的點下 XHR 可以看到所有 JSON api 請求。Request 主要分成 /partial 跟 /api 兩大類，/partial 是該頁面需要的 HTML 片段，/api 是該頁面需要的資料。<br><img src="/img/how-to-use-google-developer-tools-parsing-dcard/bWtS3Mz.png" alt="/img/how-to-use-google-developer-tools-parsing-dcard/bWtS3Mz.png"></p>
-<p>大力點下我們關注的 /api，這裡選擇解析 /api/forum/all/1，可以在 <a href="http://www.dcard.tw/f" target="_blank" rel="external">http://www.dcard.tw/f</a> 看到這個 request。第一個看到的頁面是 header，可以搜尋一些網路上的 <a href="http://kb.cnblogs.com/page/92320/" target="_blank" rel="external">HTTP Header 詳解</a>了解如何送 data。<br><img src="/img/how-to-use-google-developer-tools-parsing-dcard/weWEfew.png" alt="/img/how-to-use-google-developer-tools-parsing-dcard/weWEfew.png"></p>
-<h3 id="延伸參考，如何開發_Browser_Extension:">延伸參考，如何開發 Browser Extension:</h3><p><a href="http://tech.mozilla.com.tw/posts/5832/%E8%87%AA%E5%B7%B1%E7%9A%84%E7%80%8F%E8%A6%BD%E5%99%A8%E8%87%AA%E5%B7%B1%E6%94%B9-part-i-%E5%88%A9%E7%94%A8firefox-addon-sdk%E9%96%8B%E7%99%BC%E7%B0%A1%E5%96%AE%E7%9A%84%E9%99%84%E5%8A%A0%E5%85%83" target="_blank" rel="external">自己的瀏覽器自己改 (Part I) －利用Firefox Addon SDK開發簡單的附加元件</a></p>
-<p><a href="https://speakerdeck.com/qcl/how-qclean-works-introduction-to-browser-extensions" target="_blank" rel="external">How QCLean Works</a></p>
-
     
-	</div>
-	<footer class="entry-footer">
-		<div class="entry-meta-footer">
-			<span class="category">
-				
-			</span>
-			<span class="tags">
-				
-			</span>
-		</div>
-	</footer>
-	
+<nav id="article-nav">
+  
+  
+    <a href="/2015/03/07/如何使用-Google-Chrome-Developer-Tools-解析-Dcard-json-api/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          如何使用 Google Chrome Developer Tools 解析 Dcard json api
+        
+      </div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
-	<hr class="article-devider">
 
-
-
-  
-    <article id="post-About-This-Blog" class="post">
-	<footer class="entry-meta-header">
-		<span class="meta-elements date">
-			<a href="/2015/03/06/About-This-Blog/" class="article-date">
-  <time datetime="2015-03-06T12:01:06.000Z" itemprop="datePublished">2015-03-06</time>
-</a>
-		</span>
-		<span class="meta-elements author">Dcard Team</span>
-		<div class="commentscount">
-			
-		</div>
-	</footer>
-	
-	<header class="entry-header">
-		
-  
-    <h1 itemprop="name" class="entry-title">
-      <a class="article-title" href="/2015/03/06/About-This-Blog/">About This Blog</a>
-    </h1>
-  
-
-	</header>
-	<div class="entry-content">
-		
-    	<p>這個 Blog 為了所有想幫助 Dcard 開發、或使用 API 開發者所建</p>
-
-    
-	</div>
-	<footer class="entry-footer">
-		<div class="entry-meta-footer">
-			<span class="category">
-				
-			</span>
-			<span class="tags">
-				
-			</span>
-		</div>
-	</footer>
-	
-</article>
-
-
-	<hr class="article-devider">
-
-
-
-  
-  
 
     </div>
     <div class="mb-search">
